@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skok do streamu...</title>
+</head>
+<body>
+    <script>
+        // Skrypt bierze CAŁY tekst, który znajduje się w linku po "?url="
+        const pelnyLink = window.location.search.split('?url=')[1];
+
+        if (pelnyLink) {
+            // Przekierowanie na pełny adres, razem z wszystkimi tokenami i pytajnikami
+            window.location.href = decodeURIComponent(pelnyLink);
+        } else {
+            document.body.innerHTML = "<h3>Błąd: Brak linku docelowego po ?url=</h3>";
+        }
+    </script>
+</body>
+</html>
